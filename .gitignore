@@ -1,7 +1,2 @@
 *.env
-
 node_modules
-dist
-notes
-lib
-src/php
