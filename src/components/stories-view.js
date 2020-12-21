@@ -112,7 +112,10 @@ class StoriesView extends LitElement {
     });
   }
   _changeUser(user) {
-    this._users[user].scrollIntoView({ behavior: 'smooth' });
+    const nextUser = this._users[user];
+    const scroll = () => nextUser.scrollIntoView({ behavior: 'smooth' });
+    window.requestAnimationFrame(scroll);
+
     const stories = this._stories[user].filter((story) => !story.seen);
     this._currentView = [user, stories.length - 1];
   }

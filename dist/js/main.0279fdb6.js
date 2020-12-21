@@ -2849,7 +2849,10 @@ class StoriesView extends LitElement {
     });
   }
   _changeUser(user) {
-    this._users[user].scrollIntoView({ behavior: 'smooth' });
+    const nextUser = this._users[user];
+    const scroll = () => nextUser.scrollIntoView({ behavior: 'smooth' });
+    window.requestAnimationFrame(scroll);
+
     const stories = this._stories[user].filter((story) => !story.seen);
     this._currentView = [user, stories.length - 1];
   }
@@ -3130,11 +3133,11 @@ class StoriesView extends LitElement {
 customElements.define(COMPONENT, StoriesView);
 
 (async function loadMaterialIcons() {
-  await import('./svg-icon-c95bc76a.js');
+  await import('./svg-icon-9988e601.js');
 }());
 
 window.addEventListener('error', (e) => console.error(e));
 window.addEventListener('unhandledrejection', (e) => console.error(e.reason));
 
 export { LitElement as L, css as c, html as h };
-//# sourceMappingURL=main.d26545d9.js.map
+//# sourceMappingURL=main.0279fdb6.js.map
