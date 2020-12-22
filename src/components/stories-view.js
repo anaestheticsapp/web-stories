@@ -69,12 +69,14 @@ class StoriesView extends LitElement {
   _getWindowMedian() {
     this._median = this.offsetLeft + this.clientWidth / 2;
   }
-  _keyboardNavigation({ key }) {
+  _keyboardNavigation(e) {
+    const { key } = e;
     if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'ArrowLeft' || key === 'ArrowRight') {
       const [user] = this._currentView;
       switch (key) {
         case 'ArrowDown':
         case 'ArrowUp':
+          e.preventDefault();
           const story = this._stories[user].filter((story) => !story.seen).length - 1;
           return this._navigateStories(key === 'ArrowDown' ? 'next' : 'prev', user, story);
         case 'ArrowLeft':
@@ -113,8 +115,7 @@ class StoriesView extends LitElement {
   }
   _changeUser(user) {
     const nextUser = this._users[user];
-    const scroll = () => nextUser.scrollIntoView({ behavior: 'smooth' });
-    window.requestAnimationFrame(scroll);
+    nextUser.scrollIntoView({ behavior: 'smooth' });
 
     const stories = this._stories[user].filter((story) => !story.seen);
     this._currentView = [user, stories.length - 1];
