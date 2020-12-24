@@ -1,6 +1,6 @@
 {
   "name": "stories",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Web Stories",
   "main": "main.js",
   "dependencies": {
@@ -10,7 +10,8 @@
     "@rollup/plugin-node-resolve": "^11.0.0",
     "fs-extra": "^9.0.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.34.2"
+    "rollup": "^2.34.2",
+    "rollup-plugin-serve": "^1.1.0"
   },
   "scripts": {
     "build": "rollup --c --environment BUILD:production",
