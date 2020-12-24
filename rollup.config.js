@@ -1,5 +1,4 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
-import serve from 'rollup-plugin-serve';
 import rimraf from 'rimraf';
 import resolveDirs from './lib/resolve-dirs.js';
 import copyPlugin from './lib/copy-plugin.js';
@@ -29,7 +28,6 @@ function build() {
         { from: './src/assets/stories/', to: './dist/assets/stories/' },
       ]),
       html(),
-      serve('dist'),
     ],
   };
 }
