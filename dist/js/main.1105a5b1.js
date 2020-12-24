@@ -3141,4 +3141,3 @@ window.addEventListener('error', (e) => console.error(e));
 window.addEventListener('unhandledrejection', (e) => console.error(e.reason));
 
 export { LitElement as L, css as c, html as h };
-//# sourceMappingURL=main.1105a5b1.js.map

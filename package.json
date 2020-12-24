@@ -17,11 +17,11 @@
     "node": "12.x"
   },
   "scripts": {
-    "build": "rollup --c --environment BUILD:production",
+    "build": "rollup --c --environment BUILD:production && set PORT=10002 && node server.js",
     "dev": "npm version patch --no-git-tag && rollup --c --environment BUILD:development",
     "watch": "rollup --config --environment BUILD:development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rollup --c --environment BUILD:development && node server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "web stories"

@@ -65,4 +65,3 @@ class SvgIcon extends LitElement {
   }
 }
 customElements.define('svg-icon', SvgIcon);
-//# sourceMappingURL=svg-icon-16d05eb6.js.map
